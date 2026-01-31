@@ -1,0 +1,15 @@
+= git
+
+== rebase on top of new `main` branch commits
+
+https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt--Xstrategy-option
+
+Accept all incoming changes from `main` branch: use the `-X` option with the `ours` strategy.
+`-Xours` tells `git` to protect the new base. By bringing in only the additions that the incoming commits have made, it protects what is already in the new base.
+
+[source, shell]
+----
+❯ git rebase -Xours origin/main
+----
+
+Then fix any conflicts and continue the rebase.

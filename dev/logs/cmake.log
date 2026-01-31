@@ -1,0 +1,265 @@
+[main] Configuring project: facebook-folly 
+[driver] Removing /workspaces/facebook-folly/build/CMakeCache.txt
+[driver] Removing /workspaces/facebook-folly/build/CMakeFiles
+[proc] Executing command: /usr/local/bin/cmake -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/aarch64-linux-gnu-gcc-14 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/aarch64-linux-gnu-g++-14 --no-warn-unused-cli -S /workspaces/facebook-folly -B /workspaces/facebook-folly/build -G Ninja
+[cmake] Not searching for unused variables given on the command line.
+[cmake] -- The CXX compiler identification is GNU 14.2.0
+[cmake] -- The C compiler identification is GNU 14.2.0
+[cmake] -- The ASM compiler identification is GNU
+[cmake] -- Found assembler: /usr/bin/aarch64-linux-gnu-gcc-14
+[cmake] -- Detecting CXX compiler ABI info
+[cmake] -- Detecting CXX compiler ABI info - done
+[cmake] -- Check for working CXX compiler: /usr/bin/aarch64-linux-gnu-g++-14 - skipped
+[cmake] -- Detecting CXX compile features
+[cmake] -- Detecting CXX compile features - done
+[cmake] -- Detecting C compiler ABI info
+[cmake] -- Detecting C compiler ABI info - done
+[cmake] -- Check for working C compiler: /usr/bin/aarch64-linux-gnu-gcc-14 - skipped
+[cmake] -- Detecting C compile features
+[cmake] -- Detecting C compile features - done
+[cmake] -- setting C++ standard to C++26
+[cmake] -- Looking for sys/types.h
+[cmake] -- Looking for sys/types.h - found
+[cmake] -- Looking for stdint.h
+[cmake] -- Looking for stdint.h - found
+[cmake] -- Looking for stddef.h
+[cmake] -- Looking for stddef.h - found
+[cmake] -- Check size of __int128_t
+[cmake] -- Check size of __int128_t - done
+[cmake] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[cmake] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[cmake] -- Found Threads: TRUE
+[cmake] -- Found DoubleConversion: /usr/lib/aarch64-linux-gnu/libdouble-conversion.so
+[cmake] -- Found FastFloat: /usr/include
+[cmake] -- Found gflags from package config /usr/lib/aarch64-linux-gnu/cmake/gflags/gflags-config.cmake
+[cmake] -- Found Glog: /usr/lib/aarch64-linux-gnu/libglog.so
+[cmake] -- Found gflags as a dependency of glog::glog, include=/usr/include, libs=gflags_shared
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBUNWIND)
+[cmake]   does not match the name of the calling package (LibUnwind).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   build/fbcode_builder/CMake/FindLibUnwind.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   build/fbcode_builder/CMake/FindGlog.cmake:44 (find_package)
+[cmake]   CMake/folly-deps.cmake:76 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBUNWIND: /usr/lib/aarch64-linux-gnu/libunwind.so
+[cmake] -- Found LibUnwind as a dependency of glog::glog, include=/usr/include/aarch64-linux-gnu, libs=/usr/lib/aarch64-linux-gnu/libunwind.so
+[cmake] -- Found libevent: /usr/lib/aarch64-linux-gnu/libevent.so
+[cmake] -- Found ZLIB: /usr/lib/aarch64-linux-gnu/libz.so (found version "1.3")
+[cmake] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found suitable version "3.0.13", minimum required is "1.1.1")
+[cmake] -- Found BZip2: /usr/lib/aarch64-linux-gnu/libbz2.so (found version "1.0.8")
+[cmake] -- Looking for BZ2_bzCompressInit
+[cmake] -- Looking for BZ2_bzCompressInit - found
+[cmake] -- Looking for lzma_auto_decoder in /usr/lib/aarch64-linux-gnu/liblzma.so
+[cmake] -- Looking for lzma_auto_decoder in /usr/lib/aarch64-linux-gnu/liblzma.so - found
+[cmake] -- Looking for lzma_easy_encoder in /usr/lib/aarch64-linux-gnu/liblzma.so
+[cmake] -- Looking for lzma_easy_encoder in /usr/lib/aarch64-linux-gnu/liblzma.so - found
+[cmake] -- Looking for lzma_lzma_preset in /usr/lib/aarch64-linux-gnu/liblzma.so
+[cmake] -- Looking for lzma_lzma_preset in /usr/lib/aarch64-linux-gnu/liblzma.so - found
+[cmake] -- Found LibLZMA: /usr/lib/aarch64-linux-gnu/liblzma.so (found version "5.4.5")
+[cmake] -- Found LZ4: /usr/lib/aarch64-linux-gnu/liblz4.so
+[cmake] -- Found LZ4: /usr/lib/aarch64-linux-gnu/liblz4.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (ZSTD) does
+[cmake]   not match the name of the calling package (Zstd).  This can lead to
+[cmake]   problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindZstd.cmake:32 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:125 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found ZSTD: /usr/lib/aarch64-linux-gnu/libzstd.so
+[cmake] -- Found Zstd: /usr/lib/aarch64-linux-gnu/libzstd.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (SNAPPY)
+[cmake]   does not match the name of the calling package (Snappy).  This can lead to
+[cmake]   problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindSnappy.cmake:31 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:132 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found SNAPPY: /usr/lib/aarch64-linux-gnu/libsnappy.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBDWARF)
+[cmake]   does not match the name of the calling package (LibDwarf).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindLibDwarf.cmake:26 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:139 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBDWARF: /usr/lib/aarch64-linux-gnu/libdwarf.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBIBERTY)
+[cmake]   does not match the name of the calling package (Libiberty).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindLibiberty.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:143 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBIBERTY: /usr/lib/aarch64-linux-gnu/libiberty.a
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBAIO)
+[cmake]   does not match the name of the calling package (LibAIO).  This can lead to
+[cmake]   problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindLibAIO.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:147 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBAIO: /usr/lib/aarch64-linux-gnu/libaio.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBURING)
+[cmake]   does not match the name of the calling package (LibUring).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindLibUring.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:151 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBURING: /usr/lib/aarch64-linux-gnu/liburing.so
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBSODIUM)
+[cmake]   does not match the name of the calling package (Libsodium).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   CMake/FindLibsodium.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:155 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Found LIBSODIUM: /usr/lib/aarch64-linux-gnu/libsodium.so
+[cmake] -- Found Libsodium: /usr/lib/aarch64-linux-gnu/libsodium.so
+[cmake] -- Looking for swapcontext
+[cmake] CMake Warning (dev) at /opt/cmake/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake:493 (message):
+[cmake]   The package name passed to find_package_handle_standard_args() (LIBUNWIND)
+[cmake]   does not match the name of the calling package (LibUnwind).  This can lead
+[cmake]   to problems in calling code that expects find_package() result variables
+[cmake]   (e.g., `_FOUND`) to follow a certain pattern.
+[cmake] Call Stack (most recent call first):
+[cmake]   build/fbcode_builder/CMake/FindLibUnwind.cmake:22 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+[cmake]   CMake/folly-deps.cmake:167 (find_package)
+[cmake]   CMakeLists.txt:170 (include)
+[cmake] This warning is for project developers.  Use -Wno-dev to suppress it.
+[cmake] 
+[cmake] -- Looking for swapcontext - found
+[cmake] -- Looking for C++ include elf.h
+[cmake] -- Looking for C++ include elf.h - found
+[cmake] -- Looking for backtrace
+[cmake] -- Looking for backtrace - found
+[cmake] -- backtrace facility detected in default set of libraries
+[cmake] -- Found Backtrace: /usr/include
+[cmake] -- Setting FOLLY_USE_SYMBOLIZER: ON
+[cmake] -- Setting FOLLY_HAVE_ELF: 1
+[cmake] -- Setting FOLLY_HAVE_DWARF: TRUE
+[cmake] -- Performing Test FOLLY_CPP_ATOMIC_BUILTIN
+[cmake] -- Performing Test FOLLY_CPP_ATOMIC_BUILTIN - Success
+[cmake] -- Performing Test FOLLY_STDLIB_LIBSTDCXX
+[cmake] -- Performing Test FOLLY_STDLIB_LIBSTDCXX - Success
+[cmake] -- Performing Test FOLLY_STDLIB_LIBSTDCXX_GE_9
+[cmake] -- Performing Test FOLLY_STDLIB_LIBSTDCXX_GE_9 - Success
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCXX
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCXX - Failed
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCXX_GE_9
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCXX_GE_9 - Failed
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCPP
+[cmake] -- Performing Test FOLLY_STDLIB_LIBCPP - Failed
+[cmake] -- Looking for C++ include jemalloc/jemalloc.h
+[cmake] -- Looking for C++ include jemalloc/jemalloc.h - not found
+[cmake] -- Performing Test COMPILER_HAS_UNKNOWN_WARNING_OPTION
+[cmake] -- Performing Test COMPILER_HAS_UNKNOWN_WARNING_OPTION - Failed
+[cmake] -- Performing Test COMPILER_HAS_W_SHADOW_LOCAL
+[cmake] -- Performing Test COMPILER_HAS_W_SHADOW_LOCAL - Success
+[cmake] -- Performing Test COMPILER_HAS_W_SHADOW_COMPATIBLE_LOCAL
+[cmake] -- Performing Test COMPILER_HAS_W_SHADOW_COMPATIBLE_LOCAL - Success
+[cmake] -- Performing Test COMPILER_HAS_W_NOEXCEPT_TYPE
+[cmake] -- Performing Test COMPILER_HAS_W_NOEXCEPT_TYPE - Success
+[cmake] -- Performing Test COMPILER_HAS_W_NULLABILITY_COMPLETENESS
+[cmake] -- Performing Test COMPILER_HAS_W_NULLABILITY_COMPLETENESS - Failed
+[cmake] -- Performing Test COMPILER_HAS_W_INCONSISTENT_MISSING_OVERRIDE
+[cmake] -- Performing Test COMPILER_HAS_W_INCONSISTENT_MISSING_OVERRIDE - Failed
+[cmake] -- Performing Test COMPILER_HAS_F_ALIGNED_NEW
+[cmake] -- Performing Test COMPILER_HAS_F_ALIGNED_NEW - Success
+[cmake] -- Performing Test COMPILER_HAS_F_OPENMP
+[cmake] -- Performing Test COMPILER_HAS_F_OPENMP - Success
+[cmake] -- Looking for pthread_atfork
+[cmake] -- Looking for pthread_atfork - found
+[cmake] -- Looking for accept4
+[cmake] -- Looking for accept4 - found
+[cmake] -- Looking for getrandom
+[cmake] -- Looking for getrandom - found
+[cmake] -- Looking for preadv
+[cmake] -- Looking for preadv - found
+[cmake] -- Looking for pwritev
+[cmake] -- Looking for pwritev - found
+[cmake] -- Looking for clock_gettime
+[cmake] -- Looking for clock_gettime - found
+[cmake] -- Looking for pipe2
+[cmake] -- Looking for pipe2 - found
+[cmake] -- Looking for malloc_usable_size
+[cmake] -- Looking for malloc_usable_size - found
+[cmake] -- Performing Test FOLLY_HAVE_IFUNC
+[cmake] -- Performing Test FOLLY_HAVE_IFUNC - Success
+[cmake] -- Performing Test FOLLY_HAVE_UNALIGNED_ACCESS
+[cmake] -- Performing Test FOLLY_HAVE_UNALIGNED_ACCESS - Success
+[cmake] -- Performing Test FOLLY_HAVE_VLA
+[cmake] -- Performing Test FOLLY_HAVE_VLA - Success
+[cmake] -- Performing Test FOLLY_HAVE_WEAK_SYMBOLS
+[cmake] -- Performing Test FOLLY_HAVE_WEAK_SYMBOLS - Success
+[cmake] -- Performing Test FOLLY_HAVE_LINUX_VDSO
+[cmake] -- Performing Test FOLLY_HAVE_LINUX_VDSO - Success
+[cmake] -- Performing Test FOLLY_HAVE_WCHAR_SUPPORT
+[cmake] -- Performing Test FOLLY_HAVE_WCHAR_SUPPORT - Success
+[cmake] -- Performing Test FOLLY_HAVE_EXTRANDOM_SFMT19937
+[cmake] -- Performing Test FOLLY_HAVE_EXTRANDOM_SFMT19937 - Success
+[cmake] -- Performing Test HAVE_VSNPRINTF_ERRORS
+[cmake] -- Performing Test HAVE_VSNPRINTF_ERRORS - Success
+[cmake] -- Performing Test COMPILER_HAS_M_PCLMUL
+[cmake] -- Performing Test COMPILER_HAS_M_PCLMUL - Failed
+[cmake] -- Performing Test COMPILER_HAS_F_COROUTINES
+[cmake] -- Performing Test COMPILER_HAS_F_COROUTINES - Success
+[cmake] -- GCC has C++ coroutines support, enabling for Folly.
+[cmake] -- Found gmock via config, defines=, include=/usr/include, libs=GTest::gmock_main;GTest::gmock;GTest::gtest
+[cmake] -- Found GTest: /usr/lib/aarch64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.14.0")
+[cmake] Skipping slow test compression/test/compression_compression_test, enable with BUILD_SLOW_TESTS
+[cmake] Skipping slow test concurrency/test/concurrency_concurrent_hash_map_stress_test, enable with BUILD_SLOW_TESTS
+[cmake] Skipping broken test executors/test/executors_function_scheduler_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test executors/test/executors_thread_pool_executor_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test fibers/test/fibers_fibers_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping hanging test io/test/io_shutdown_socket_set_test, enable with BUILD_HANGING_TESTS
+[cmake] Skipping hanging test io/test/io_socket_option_value_test, enable with BUILD_HANGING_TESTS
+[cmake] Skipping broken test io/async/test/io_async_async_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test io/async/test/io_async_event_base_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping slow test io/async/test/io_async_hh_wheel_timer_slow_tests, enable with BUILD_SLOW_TESTS
+[cmake] Skipping hanging test test/atomic_hash_map_test, enable with BUILD_HANGING_TESTS
+[cmake] Skipping broken test test/exception_string_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test test/function_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test test/indexed_mem_pool_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping slow test test/mpmc_queue_test, enable with BUILD_SLOW_TESTS
+[cmake] Skipping hanging test test/network_address_test, enable with BUILD_HANGING_TESTS
+[cmake] Skipping hanging test test/packed_sync_ptr_test, enable with BUILD_HANGING_TESTS
+[cmake] Skipping slow test test/producer_consumer_queue_test, enable with BUILD_SLOW_TESTS
+[cmake] Skipping broken test test/singleton_double_registration_test, enable with BUILD_BROKEN_TESTS
+[cmake] Skipping broken test test/singleton_thread_local_test, enable with BUILD_BROKEN_TESTS
+[cmake] -- Configuring done (11.5s)
+[cmake] -- Generating done (3.0s)
+[cmake] -- Build files have been written to: /workspaces/facebook-folly/build
