@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.30 FATAL_ERROR)
 # We use the GoogleTest module if it is available (only in CMake 3.9+)
 # It requires CMP0054 and CMP0057 to be enabled.
 if (POLICY CMP0054)
@@ -95,6 +95,10 @@ set(FOLLY_SUPPORT_SHARED_LIBRARY "${BUILD_SHARED_LIBS}")
 
 include(FBBuildOptions)
 fb_activate_static_library_option()
+
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+message(STATUS "setting C++ standard to C++${CMAKE_CXX_STANDARD}")
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 20)
@@ -363,8 +367,8 @@ install(
   COMPONENT dev
 )
 
-option(BUILD_TESTS "If enabled, compile the tests." OFF)
-option(BUILD_BENCHMARKS "If enabled, compile the benchmarks." OFF)
+option(BUILD_TESTS "If enabled, compile the tests." ON)
+option(BUILD_BENCHMARKS "If enabled, compile the benchmarks." ON)
 option(BUILD_BROKEN_TESTS "If enabled, compile tests that are known to be broken." OFF)
 option(BUILD_HANGING_TESTS "If enabled, compile tests that are known to hang." OFF)
 option(BUILD_SLOW_TESTS "If enabled, compile tests that take a while to run in debug mode." OFF)

@@ -356,6 +356,19 @@ define_property(GLOBAL PROPERTY FOLLY_GRANULAR_INTERFACE_TARGETS
 )
 set_property(GLOBAL PROPERTY FOLLY_GRANULAR_INTERFACE_TARGETS "")
 
+macro(dev_set_target_folder target)
+  # message(STATUS "Setting folder for target: ${target}")
+  if(FOLDER_PREFIX STREQUAL "")
+    set_target_properties(${target} PROPERTIES
+      FOLDER "libs/${FOLDER_NAME}"
+    )
+  else()
+    set_target_properties(${target} PROPERTIES
+      FOLDER "libs/${FOLDER_PREFIX}/${FOLDER_NAME}"
+    )
+  endif()
+endmacro()
+
 # Helper to add a folly library target
 # Creates:
 #   1. OBJECT library (${name}_obj) - for composition into monolithic target
@@ -383,18 +396,26 @@ function(folly_add_library)
     ${ARGN}
   )
 
+  set(FOLDER_PREFIX "Folder Prefix")
+  set(FOLDER_NAME "Folder Name")
   # Use explicit TARGET_NAME if provided, otherwise compute from directory
   if(FOLLY_LIB_TARGET_NAME)
     set(_target_name "${FOLLY_LIB_TARGET_NAME}")
+    set(FOLDER_PREFIX "")
+    set(FOLDER_NAME "${FOLLY_LIB_TARGET_NAME}")
   else()
     # Compute target name from current directory relative to FOLLY_DIR
     # e.g., folly/io → folly_io, folly/io/async → folly_io_async
     file(RELATIVE_PATH _rel_path "${FOLLY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
     if(_rel_path STREQUAL "")
       set(_target_name "folly_${FOLLY_LIB_NAME}")
+      set(FOLDER_PREFIX "")
+      set(FOLDER_NAME "${FOLLY_LIB_NAME}")
     else()
       string(REPLACE "/" "_" _prefix "${_rel_path}")
       set(_target_name "folly_${_prefix}_${FOLLY_LIB_NAME}")
+      set(FOLDER_PREFIX "${_prefix}")
+      set(FOLDER_NAME "${FOLLY_LIB_NAME}")
     endif()
   endif()
 
@@ -435,6 +456,7 @@ function(folly_add_library)
   # 1. Create OBJECT library (for composition into monolithic target)
   set(_obj_target "${_target_name}_obj")
   add_library(${_obj_target} OBJECT ${_srcs} ${FOLLY_LIB_HEADERS})
+  dev_set_target_folder(${_obj_target})
   set_property(TARGET ${_obj_target} PROPERTY VERSION ${PACKAGE_VERSION})
   if(BUILD_SHARED_LIBS)
     set_property(TARGET ${_obj_target} PROPERTY POSITION_INDEPENDENT_CODE ON)
@@ -506,6 +528,7 @@ function(folly_add_library)
     # For shared builds: create INTERFACE library that will link to monolithic folly
     # This avoids duplicating symbols between granular and monolithic libraries
     add_library(${_target_name} INTERFACE)
+    dev_set_target_folder(${_target_name})
 
     target_include_directories(${_target_name}
       INTERFACE
@@ -533,6 +556,7 @@ function(folly_add_library)
     # For excluded targets in shared builds: create SHARED library with actual code
     # These are NOT in the monolithic folly, so they need their own implementation
     add_library(${_target_name} SHARED $<TARGET_OBJECTS:${_obj_target}>)
+    dev_set_target_folder(${_target_name})
     set_property(TARGET ${_target_name} PROPERTY VERSION ${PACKAGE_VERSION})
 
     target_include_directories(${_target_name}
@@ -588,6 +612,7 @@ function(folly_add_library)
   else()
     # For static builds: create STATIC library (individual .a file for granular linking)
     add_library(${_target_name} STATIC $<TARGET_OBJECTS:${_obj_target}>)
+    dev_set_target_folder(${_target_name})
     set_property(TARGET ${_target_name} PROPERTY VERSION ${PACKAGE_VERSION})
 
     target_include_directories(${_target_name}
